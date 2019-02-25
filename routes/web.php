@@ -46,3 +46,11 @@ Route::post('/client/store',[
 			'uses'=> 'ClientController@store',
 			'as'=>'client.store'
 		]);
+Route::get('/client/edit/{id}',[
+			'uses'=> 'ClientController@edit',
+			'as'=>'client.edit'
+		]);
+Route::get('/client/update/{id}',[
+			'uses'=> 'ClientController@update',
+			'as'=>'client.update'
+		]);

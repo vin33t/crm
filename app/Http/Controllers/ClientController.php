@@ -144,7 +144,7 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('client.edit')->with('client',Client::find($id));
     }
 
     /**
@@ -156,7 +156,7 @@ class ClientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd(true);
     }
 
     /**

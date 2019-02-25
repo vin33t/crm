@@ -29,6 +29,7 @@
 	                                <th>Mobile</th>
 	                                <th>DOB</th>
 	                                <th>Occupation</th>
+	                                <th>Action</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody  >
@@ -41,6 +42,9 @@
 	                                	<td>{{$client->mobile}}</td>
 	                                	<td>{{$client->DOB}}</td>
 	                                	<td>{{$client->occupation}}</td>
+	                                	<td>
+	                                		<a href="{{route('client.edit',['id'=>$client->id])}}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+	                                	</td>
 	                            	</tr>
 	                            @endforeach
 	                            @endif
