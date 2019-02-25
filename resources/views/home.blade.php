@@ -14,6 +14,7 @@
     </div>
 @stop
 @section('content')
+    @if(Auth::user()->admin)
     <div class="row">
         <div class="col-xl-3 col-md-6 col-12">
           <div class="info-box bg-blue">
@@ -676,8 +677,9 @@
              </div>
          </div>
     </div>
-    
-                
+    @else
+    <h1> You are not admin</h1>
+    @endif
 
 @stop
 
