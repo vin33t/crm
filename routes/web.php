@@ -50,7 +50,7 @@ Route::get('/client/edit/{id}',[
 			'uses'=> 'ClientController@edit',
 			'as'=>'client.edit'
 		]);
-Route::get('/client/update/{id}',[
+Route::post('/client/update/{id}',[
 			'uses'=> 'ClientController@update',
 			'as'=>'client.update'
 		]);
