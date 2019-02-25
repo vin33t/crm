@@ -8,7 +8,8 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta name="description" content="Responsive Admin Template" />
     <meta name="author" content="SmartUniversity" />
-    <title>Spice</title>
+    <title>Forb Club</title>
+
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet" type="text/css" />
 	<!-- icons -->
@@ -24,6 +25,8 @@
 	<link rel="stylesheet" href="{{asset('theme/assets/css/material_style.cs')}}s">
 	<!-- animation -->
 	<link href="{{asset('theme/assets/css/pages/animate_page.css')}}" rel="stylesheet">
+    <!-- steps -->
+    <link rel="stylesheet" href="{{asset('theme/assets/css/pages/steps.css')}}"> 
 	<!-- Template Styles -->
     <link href="{{asset('theme/assets/css/plugins.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('theme/assets/css/style.css')}}" rel="stylesheet" type="text/css" />
@@ -31,11 +34,12 @@
     <link href="{{asset('theme/assets/css/theme-color.css')}}" rel="stylesheet" type="text/css" />
 	<!-- favicon -->
     <link rel="shortcut icon" href="{{asset('theme/assets/img/favicon.ico')}}" /> 
+    
     <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
     @yield('styles')
  </head>
  <!-- END HEAD -->
-<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
+<body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark" >
     <div class="page-wrapper">
         <!-- start header -->
         <div class="page-header navbar navbar-fixed-top">
@@ -43,8 +47,8 @@
                 <!-- logo start -->
                 <div class="page-logo">
                     <a href="index.html">
-                    <img alt="" src="{{asset('theme/assets/img/logo.png')}}">
-                    <span class="logo-default" >Spice</span> </a>
+                    {{-- <img alt="" src="{{asset('theme/assets/img/logo.jpeg')}}" style="width: 100px"> --}}
+                    <span class="logo-default" >Forb Club</span> </a>
                 </div>
                 <!-- logo end -->
 				<ul class="nav navbar-nav navbar-left in">
@@ -216,7 +220,11 @@
  						<!-- start manage user dropdown -->
  						<li class="dropdown dropdown-user">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                <img alt="" class="img-circle " src="{{asset('theme/assets/img/dp.jpg')}}" />
+                                <img alt="" class="img-circle " @if(Auth::user()->avatar)
+                                                      src="{{asset(Auth::user()->avatar)}}"
+                                                    @else
+                                                      src="{{asset('theme/assets/img/user-placeholder.jpg')}}"
+                                                    @endif />
                                 <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
@@ -276,7 +284,11 @@
 	                            <div class="user-panel">
 	                                <div class="row">
                                             <div class="sidebar-userpic">
-                                                <img src="{{asset('theme/assets/img/dp.jpg')}}" class="img-responsive" alt=""> </div>
+                                                <img @if(Auth::user()->avatar)
+                                                      src="{{asset(Auth::user()->avatar)}}"
+                                                    @else
+                                                      src="{{asset('theme/assets/img/user-placeholder.jpg')}}"
+                                                    @endif class="img-responsive" alt=""> </div>
                                         </div>
                                         <div class="profile-usertitle">
                                             <div class="sidebar-userpic-name"> {{Auth::user()->name}} </div>
@@ -307,6 +319,12 @@
                                     <span class="title">Employees</span>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{route('clients')}}" class="nav-link nav-toggle">
+                                    <i class="material-icons">dashboard</i>
+                                    <span class="title">Clients</span>
+                                </a>
+                            </li>
 	                    </ul>
 	                </div>
                 </div>
@@ -317,7 +335,7 @@
                 <div class="page-content">
                     @yield('header')
                    <!-- start widget -->
-					<div class="state-overview">
+					<div class="state-overview" style="color: black">
 						@yield('content')
                     </div>
                 </div>
@@ -345,6 +363,10 @@
     <script src="{{asset('theme/assets/plugins/bootstrap/js/bootstrap.min.js')}}" ></script>
     <script src="{{asset('theme/assets/plugins/sparkline/jquery.sparkline.min.js')}}" ></script>
 	<script src="{{asset('theme/assets/js/pages/sparkline/sparkline-data.js')}}" ></script>
+
+    <!-- steps -->
+    <script src="{{asset('theme/assets/plugins/steps/jquery.steps.js')}}" ></script>
+    <script src="{{asset('theme/assets/js/pages/steps/steps-data.js')}}" ></script>
     <!-- Common js-->
 	<script src="{{asset('theme/assets/js/app.js')}}" ></script>
     <script src="{{asset('theme/assets/js/layout.js')}}" ></script>
@@ -357,7 +379,12 @@
     <script src="{{asset('theme/assets/plugins/morris/morris.min.js')}}" ></script>
     <script src="{{asset('theme/assets/plugins/morris/raphael-min.js')}}" ></script>
     <script src="{{asset('theme/assets/js/pages/chart/morris/morris_home_data.js')}}" ></script>
-    <!-- end js include path -->
+
+    <script src="{{asset('theme/assets/plugins/jquery-validation/js/jquery.validate.min.js')}}"></script>
+    
+    
+    
+    
     <script src="{{ asset('/js/toastr.min.js') }}"></script>
     <script>
         @if(Session::has('success'))

@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('layouts.frontend');
-// });
+Route::get('/test', function () {
+    return view('employee.create');
+});
 
 Auth::routes();
 
@@ -30,4 +30,19 @@ Route::get('/employee/create',[
 Route::post('/employee/store',[
 			'uses'=> 'EmployeeController@store',
 			'as'=>'employee.store'
+		]);
+
+
+
+Route::get('/clients',[
+			'uses'=> 'ClientController@index',
+			'as'=>'clients'
+		]);
+Route::get('/client/create',[
+			'uses'=> 'ClientController@create',
+			'as'=>'client.create'
+		]);
+Route::post('/client/store',[
+			'uses'=> 'ClientController@store',
+			'as'=>'client.store'
 		]);

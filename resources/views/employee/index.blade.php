@@ -21,14 +21,14 @@
 	            <div class="card-body ">
 	                <div class="table-responsive">
 	                    <table class="table table-striped custom-table table-hover">
-	                        <thead  style="color: black">
+	                        <thead >
 	                            <tr>
 	                                <th>Name</th>
 	                                <th>Email</th>
 	                                <th>Phone</th>
 	                            </tr>
 	                        </thead>
-	                        <tbody  style="color: black">
+	                        <tbody  >
 	                        	@if($employees->count()>0)
 	                        	@foreach($employees as $employee)
 	                            	<tr>
@@ -41,7 +41,7 @@
 	                        </tbody>
 	                    </table>
 	                    @if(!$employees->count()>0)
-	                    	<div class="text-center" style="color: black">
+	                    	<div class="text-center" >
 	                    		<strong>No Records!!</strong>
 	                    	</div>
 	                    @endif
@@ -56,17 +56,17 @@
 		</div>
 	</div>
          
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header bg-light">
-        <h5 class="modal-title" id="exampleModalLongTitle" style="color: black"><strong>Create New Employee!</strong></h5>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered" role="document" >
+    <div class="modal-content" >
+      <div class="modal-header bg-light" >
+        <h5 class="modal-title" id="exampleModalLongTitle" ><strong>Create New Employee!</strong></h5>
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form action="{{route('employee.store')}}" method="post" >
       @csrf
-      <div class="modal-body" style="color: black">
+      <div class="modal-body" >
       	  <label for="name" class="pull-left"><strong>Employee Name:</strong></label>
           <input type="text" name="name" class="form-control" required>
           <label for="email" class="pull-left"><strong>Email:</strong></label>
