@@ -18,3 +18,8 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/employees',[
+			'uses'=> 'EmployeeController@index',
+			'as'=>'employees'
+		]);
