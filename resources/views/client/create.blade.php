@@ -21,6 +21,7 @@
         <div class="col-md-12">
         <form action="{{route('client.store')}}" method="post">
         @csrf
+        
         	<div class="card card-box">
                 <div class="card-head">
                     <header>First / Sole Application Details</header>
