@@ -19,33 +19,39 @@
         <div class="col-md-12">
         	<div class="card card-box">
 	            <div class="card-body ">
-	                {{-- <div class="table-responsive">
+	                <div class="table-responsive">
 	                    <table class="table table-striped custom-table table-hover">
 	                        <thead >
 	                            <tr>
 	                                <th>Name</th>
 	                                <th>Email</th>
-	                                <th>Phone</th>
+	                                <th>Country</th>
+	                                <th>Mobile</th>
+	                                <th>DOB</th>
+	                                <th>Occupation</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody  >
-	                        	@if($employees->count()>0)
-	                        	@foreach($employees as $employee)
+	                        	@if($clients->count()>0)
+	                        	@foreach($clients as $client)
 	                            	<tr>
-	                                	<td>{{$employee->name}}</td>
-	                                	<td>{{$employee->email}}</td>
-	                                	<td>{{$employee->phone}}</td>
+	                                	<td>{{$client->first_name.' '.$client->last_name}}</td>
+	                                	<td>{{$client->email}}</td>
+	                                	<td>{{$client->country}}</td>
+	                                	<td>{{$client->mobile}}</td>
+	                                	<td>{{$client->DOB}}</td>
+	                                	<td>{{$client->occupation}}</td>
 	                            	</tr>
 	                            @endforeach
 	                            @endif
 	                        </tbody>
 	                    </table>
-	                    @if(!$employees->count()>0)
+	                    @if(!$clients->count()>0)
 	                    	<div class="text-center" >
 	                    		<strong>No Records!!</strong>
 	                    	</div>
 	                    @endif
-	                </div> --}}
+	                </div>
 	  			</div>
 			</div>
             <div class="text-center">
