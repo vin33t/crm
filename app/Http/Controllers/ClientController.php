@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Client;
 use Session;
+use Auth;
 
 class ClientController extends Controller
 {
@@ -42,6 +43,8 @@ class ClientController extends Controller
     public function store(Request $request)
     {   
         $client = new Client;
+        $client->user_id = Auth::user()->id;
+
         $client->application_category = $request->application_category;
         $client->salutation = $request->salutation;
         $client->DOB = $request->DOB;
