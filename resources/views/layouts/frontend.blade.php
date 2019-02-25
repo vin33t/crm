@@ -31,6 +31,7 @@
     <link href="{{asset('theme/assets/css/theme-color.css')}}" rel="stylesheet" type="text/css" />
 	<!-- favicon -->
     <link rel="shortcut icon" href="{{asset('theme/assets/img/favicon.ico')}}" /> 
+    <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
     @yield('styles')
  </head>
  <!-- END HEAD -->
@@ -216,7 +217,7 @@
  						<li class="dropdown dropdown-user">
                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                 <img alt="" class="img-circle " src="{{asset('theme/assets/img/dp.jpg')}}" />
-                                <span class="username username-hide-on-mobile"> John </span>
+                                <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                                 <i class="fa fa-angle-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-default animated jello">
@@ -278,7 +279,7 @@
                                                 <img src="{{asset('theme/assets/img/dp.jpg')}}" class="img-responsive" alt=""> </div>
                                         </div>
                                         <div class="profile-usertitle">
-                                            <div class="sidebar-userpic-name"> John Deo </div>
+                                            <div class="sidebar-userpic-name"> {{Auth::user()->name}} </div>
                                         </div>
                                         <div class="sidebar-userpic-btn">
 									        
@@ -357,6 +358,21 @@
     <script src="{{asset('theme/assets/plugins/morris/raphael-min.js')}}" ></script>
     <script src="{{asset('theme/assets/js/pages/chart/morris/morris_home_data.js')}}" ></script>
     <!-- end js include path -->
+    <script src="{{ asset('/js/toastr.min.js') }}"></script>
+    <script>
+        @if(Session::has('success'))
+            toastr.success("{{Session::get('success')}}")
+        @endif
+        @if(Session::has('info'))
+            toastr.info("{{Session::get('info')}}")
+        @endif
+        @if(Session::has('warning'))
+            toastr.warning("{{Session::get('warning')}}")
+        @endif
+        @if(Session::has('danger'))
+            toastr.danger("{{Session::get('danger')}}")
+        @endif
+    </script>
     @yield('scripts')
   </body>
 </html>

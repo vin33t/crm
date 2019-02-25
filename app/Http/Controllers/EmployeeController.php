@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Employee;
 use App\User;
+use Session;
 
 class EmployeeController extends Controller
 {
@@ -58,7 +59,7 @@ class EmployeeController extends Controller
         $employee->phone = $request->phone;
         $employee->password = bcrypt('pass@123');
         $employee->save();
-
+        Session::flash('success','New Employee Added!!');
         return redirect()->back();
     }
 
