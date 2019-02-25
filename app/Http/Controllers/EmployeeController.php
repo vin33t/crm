@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Employee;
+use App\User;
 
 class EmployeeController extends Controller
 {
@@ -24,7 +25,7 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        //
+        return view('employee.create');
     }
 
     /**
@@ -34,8 +35,22 @@ class EmployeeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {   $user = new User;
+        $user->name = $request->name;
+        $user->admin = 0;
+        $user->email = $request->email;
+        $user->password = bcrypt('pass@123');
+        $user->save();
+
+        $employee = new Employee;
+        $employee->user_id = $user->id;
+        $employee->name = $request->name;
+        $employee->email = $request->email;
+        $employee->phone = $request->phone;
+        $employee->password = bcrypt('pass@123');
+        $employee->save();
+
+        return redirect()->back();
     }
 
     /**

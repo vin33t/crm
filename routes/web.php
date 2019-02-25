@@ -23,3 +23,11 @@ Route::get('/employees',[
 			'uses'=> 'EmployeeController@index',
 			'as'=>'employees'
 		]);
+Route::get('/employee/create',[
+			'uses'=> 'EmployeeController@create',
+			'as'=>'employee.create'
+		]);
+Route::post('/employee/store',[
+			'uses'=> 'EmployeeController@store',
+			'as'=>'employee.store'
+		]);

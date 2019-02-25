@@ -678,7 +678,7 @@
          </div>
     </div>
     @else
-    <h1> You are not admin</h1>
+    <h1 style="color: black"> You are not admin</h1>
     @endif
 
 @stop

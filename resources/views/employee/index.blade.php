@@ -49,11 +49,38 @@
 	  			</div>
 			</div>
             <div class="text-center">
-            	<a href="" class="btn btn-xs btn-primary">Create Employee</a>
+            	{{-- <a href="{{route('employee.create')}}" class="btn btn-xs btn-primary">Create Employee</a> --}}
+            	<button type="button" class="btn btn-xs btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Create Employee</button>
+  
             </div>
 		</div>
 	</div>
          
-
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color: black"><strong>Create New Employee!</strong></h5>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form action="{{route('employee.store')}}" method="post" >
+      @csrf
+      <div class="modal-body" style="color: black">
+      	  <label for="name" class="pull-left"><strong>Employee Name:</strong></label>
+          <input type="text" name="name" class="form-control" required>
+          <label for="email" class="pull-left"><strong>Email:</strong></label>
+          <input type="email" name="email" class="form-control" required>
+          <label for="phone" class="pull-left"><strong>Phone:</strong></label>
+          <input type="textl" name="phone" class="form-control" required>
+      </div>
+      <div class="modal-footer bg-light" >
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-info">Add Employee</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
 
 @stop
