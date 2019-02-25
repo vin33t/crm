@@ -1,9 +1,12 @@
 @extends('layouts.frontend')
+@section('title')
+Edit Client
+@stop
 @section('header')
     <div class="page-bar">
         <div class="page-title-breadcrumb">
             <div class=" pull-left">
-                <div class="page-title">Create Client</div>
+                <div class="page-title">Edit Client</div>
             </div>
             <ol class="breadcrumb page-breadcrumb pull-right">
                 <li><i class="fa fa-home"></i>&nbsp;<a class="parent-item" href="{{route('home')}}">Home</a>&nbsp;<i class="fa fa-angle-right"></i>

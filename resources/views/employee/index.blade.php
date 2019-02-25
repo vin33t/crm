@@ -1,4 +1,7 @@
 @extends('layouts.frontend')
+@section('title')
+Employees
+@stop
 @section('header')
     <div class="page-bar">
         <div class="page-title-breadcrumb">
