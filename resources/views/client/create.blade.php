@@ -281,6 +281,31 @@ Create Client
                 <div class="card-body no-padding height-9">
                 	<div class="row">
 						<div class="col-md-4">
+							<label for="fclp_category"> Category:</label>
+							<select name="fclp_category" id="" class="form-control" required>
+								<option value="Exclusive India">Exclusive India</option>
+								<option value="Classic">Classic</option>
+								<option value="Imperia">Imperia</option>
+								<option value="Luxe">Luxe</option>
+								<option value="Royale">Royale</option>
+							</select>
+						</div>
+					</div>	
+            	</div>
+            </div>
+
+            <div class="card card-box">
+                <div class="card-head">
+                    <header>Payment Details</header>
+                    <div class="tools">
+                        <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                        <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                        <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="card-body no-padding height-9">
+                	<div class="row">
+						<div class="col-md-4">
 							<label for="fclp_price">FCLP Price:</label>
 							<input type="text" name="fclp_price" class="form-control" required>
 						</div>
@@ -410,6 +435,56 @@ Create Client
 					</div>
                 </div>
             </div>
+
+            <div class="card card-box">
+                <div class="card-head">
+                    <header>KYC Document</header>
+                    <div class="tools">
+                        <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                        <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                        <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="card-body no-padding height-9">
+                	<div class="row">
+                		<div class="col-md-4">
+							<label for="kyc_id_proof">ID Proof:</label>
+							<select name="kyc_id_proof" id="" class="form-control" required>
+								<option value="Ration Card">Ration Card</option>
+								<option value="Voter ID">Voter ID</option>
+								<option value="Passport">Passport</option>
+								<option value="Driving License">Driving License</option>
+								<option value="Aadhar Card">Aadhar Card</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<label for="kyc_id_ref_no">Ref Number:</label>
+							<input type="text" name="kyc_id_ref_no" class="form-control" required>
+						</div>
+						<div class="col-md-4">
+							<label for="kyc_id_pan_no">PAN Number:</label>
+							<input type="text" name="kyc_id_pan_no" class="form-control" required>
+						</div>
+					</div>
+					<div class="row">
+                		<div class="col-md-4">
+							<label for="kyc_address_proof">Address Proof:</label>
+							<select name="kyc_address_proof" id="" class="form-control" required>
+								<option value="Ration Card">Ration Card</option>
+								<option value="Voter ID">Voter ID</option>
+								<option value="Passport">Passport</option>
+								<option value="Driving License">Driving License</option>
+								<option value="Aadhar Card">Aadhar Card</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<label for="kyc_address_ref_no">Ref Number:</label>
+							<input type="text" name="kyc_address_ref_no" class="form-control" required>
+						</div>
+					</div>	
+                </div>
+            </div>
+            
             <div class="text-center">
             	<button type="submit" class="btn btn-xs btn-primary">Store Client</button>
             </div>

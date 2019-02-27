@@ -57,6 +57,8 @@ class CreateClientsTable extends Migration
             $table->string('declaration_place_two')->nullable();
             $table->string('declaration_date_two')->nullable();
 
+            $table->string('fclp_category')->nullable();
+
             $table->string('fclp_price')->nullable();
             $table->string('fclp_down_payment')->nullable();
             $table->string('fclp_mode_of_payment')->nullable();
@@ -93,6 +95,11 @@ class CreateClientsTable extends Migration
             $table->string('emi_cheque_account_holder_name')->nullable();
             $table->string('emi_account_holder_no')->nullable();
 
+            $table->string('kyc_id_proof')->nullable();
+            $table->string('kyc_id_ref_no')->nullable();
+            $table->string('kyc_id_pan_no')->nullable();
+            $table->string('kyc_address_proof')->nullable();
+            $table->string('kyc_address_ref_no')->nullable();
             $table->timestamps();
         });
     }

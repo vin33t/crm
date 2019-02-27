@@ -102,6 +102,7 @@ class ClientController extends Controller
         $client->declaration_place_two = $request->declaration_place_two;
         $client->declaration_date_two = $request->declaration_date_two;
 
+        $client->category = $request->category;
 
         $client->fclp_price = $request->fclp_price;
         $client->fclp_down_payment = $request->fclp_down_payment;
@@ -142,6 +143,11 @@ class ClientController extends Controller
         $client->emi_cheque_account_holder_name = $request->emi_cheque_account_holder_name;
         $client->emi_account_holder_no = $request->emi_account_holder_no;
         
+        $client->kyc_id_proof = $request->kyc_id_proof;
+        $client->kyc_id_ref_no = $request->kyc_id_ref_no;
+        $client->kyc_id_pan_no = $request->kyc_id_pan_no;
+        $client->kyc_address_proof = $request->kyc_address_proof;
+        $client->kyc_address_ref_no = $request->kyc_address_ref_no;
 
         $client->save();
         Session::flash('success',' New Client Created!!');
@@ -223,6 +229,7 @@ class ClientController extends Controller
         $client->declaration_place_two = $request->declaration_place_two;
         $client->declaration_date_two = $request->declaration_date_two;
 
+        $client->category = $request->category;
 
         $client->fclp_price = $request->fclp_price;
         $client->fclp_down_payment = $request->fclp_down_payment;
@@ -263,6 +270,11 @@ class ClientController extends Controller
         $client->emi_cheque_account_holder_name = $request->emi_cheque_account_holder_name;
         $client->emi_account_holder_no = $request->emi_account_holder_no;
         
+        $client->kyc_id_proof = $request->kyc_id_proof;
+        $client->kyc_id_ref_no = $request->kyc_id_ref_no;
+        $client->kyc_id_pan_no = $request->kyc_id_pan_no;
+        $client->kyc_address_proof = $request->kyc_address_proof;
+        $client->kyc_address_ref_no = $request->kyc_address_ref_no;
 
         $client->save();
         Session::flash('success',' Client Updated!!');

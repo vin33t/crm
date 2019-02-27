@@ -281,6 +281,31 @@ Edit Client
                 <div class="card-body no-padding height-9">
                 	<div class="row">
 						<div class="col-md-4">
+							<label for="fclp_category"> Category:</label>
+							<select name="fclp_category" id="" class="form-control" required>
+								<option value="Exclusive India" {{($client->fclp_category == 'Exclusive India')?'selected':''}}>Exclusive India</option>
+								<option value="Classic" {{($client->fclp_category == 'Classic')?'selected':''}}>Classic</option>
+								<option value="Imperia" {{($client->fclp_category == 'Imperia')?'selected':''}}>Imperia</option>
+								<option value="Luxe" {{($client->fclp_category == 'Luxe')?'selected':''}}>Luxe</option>
+								<option value="Royale" {{($client->fclp_category == 'Royale')?'selected':''}}>Royale</option>
+							</select>
+						</div>
+					</div>	
+            	</div>
+            </div>
+
+            <div class="card card-box">
+                <div class="card-head">
+                    <header>Payment Details</header>
+                    <div class="tools">
+                        <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                        <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                        <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="card-body no-padding height-9">
+                	<div class="row">
+						<div class="col-md-4">
 							<label for="fclp_price">FCLP Price:</label>
 							<input type="text" name="fclp_price" class="form-control" required value="{{$client->fclp_price}}">
 						</div>
@@ -482,6 +507,56 @@ Edit Client
 					</div>
                 </div>
             </div>
+			
+			<div class="card card-box">
+                <div class="card-head">
+                    <header>KYC Document</header>
+                    <div class="tools">
+                        <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                        <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                        <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="card-body no-padding height-9">
+                	<div class="row">
+                		<div class="col-md-4">
+							<label for="kyc_id_proof">ID Proof:</label>
+							<select name="kyc_id_proof" id="" class="form-control" required>
+								<option value="Ration Card" {{($client->kyc_id_proof == 'Ration Card')?'selected':''}}>Ration Card</option>
+								<option value="Voter ID" {{($client->kyc_id_proof == 'Voter ID')?'selected':''}}>Voter ID</option>
+								<option value="Passport" {{($client->kyc_id_proof == 'Passport')?'selected':''}}>Passport</option>
+								<option value="Driving License" {{($client->kyc_id_proof == 'Driving License')?'selected':''}}>Driving License</option>
+								<option value="Aadhar Card" {{($client->kyc_id_proof == 'Aadhar Card')?'selected':''}}>Aadhar Card</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<label for="kyc_id_ref_no">Ref Number:</label>
+							<input type="text" name="kyc_id_ref_no" class="form-control" required value="{{$client->kyc_id_ref_no}}">
+						</div>
+						<div class="col-md-4">
+							<label for="kyc_id_pan_no">PAN Number:</label>
+							<input type="text" name="kyc_id_pan_no" class="form-control" required value="{{$client->kyc_id_pan_no}}">
+						</div>
+					</div>
+					<div class="row">
+                		<div class="col-md-4">
+							<label for="kyc_address_proof">Address Proof:</label>
+							<select name="kyc_address_proof" id="" class="form-control" required>
+								<option value="Ration Card" {{($client->kyc_address_proof == 'Ration Card')?'selected':''}}>Ration Card</option>
+								<option value="Voter ID" {{($client->kyc_address_proof == 'Voter ID')?'selected':''}}>Voter ID</option>
+								<option value="Passport" {{($client->kyc_address_proof == 'Passport')?'selected':''}}>Passport</option>
+								<option value="Driving License" {{($client->kyc_address_proof == 'Driving License')?'selected':''}}>Driving License</option>
+								<option value="Aadhar Card" {{($client->kyc_address_proof == 'Aadhar Card')?'selected':''}}>Aadhar Card</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<label for="kyc_address_ref_no">Ref Number:</label>
+							<input type="text" name="kyc_address_ref_no" class="form-control" required value="{{$client->kyc_address_ref_no}}">
+						</div>
+					</div>	
+                </div>
+            </div>
+
             <div class="text-center">
             	<button type="submit" class="btn btn-xs btn-primary">Update Client</button>
             </div>
