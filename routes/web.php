@@ -58,3 +58,12 @@ Route::get('/client/destroy/{id}',[
 			'uses'=> 'ClientController@destroy',
 			'as'=>'client.destroy'
 		]);
+
+Route::get('/client/verification/{token}',[
+			'uses'=> 'VerificationController@verifydetails',
+			'as'=>'verify'
+		]);
+Route::get('/client/Unverification/{token}',[
+			'uses'=> 'VerificationController@notVerifydetails',
+			'as'=>'notVerify'
+		]);
