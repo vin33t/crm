@@ -24,7 +24,49 @@ Edit Client
         <div class="col-md-12">
         <form action="{{route('client.update',['id'=>$client->id])}}" method="post">
         @csrf
-        
+        	
+        	<div class="card card-box">
+                <div class="card-head">
+                    <header>Application Form for purchase of Forb Clun Leisureship</header>
+                    <div class="tools">
+                        <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                        <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                        <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="card-body no-padding height-9">
+                	<div class="row">
+                		<div class="col-md-6">
+							<label for="customer_no">Customer No:</label>
+							<input name="customer_no" id="" readonly required value="{{$client->customer_no}}">
+						</div>
+						<div class="col-md-6">
+							<label for="application_no">Application No:</label>
+							<input name="application_no" id="" readonly required value="{{$client->apllication_no}}"><br><br>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<label for="application_categoryy">Application category:</label>
+							<select name="application_categoryy" id="" class="form-control" required>
+								<option value="individual" {{($client->application_categoryy == 'individual')?'selected':''}}>Individual</option>
+								<option value="joint" {{($client->application_categoryy == 'joint')?'selected':''}}>Joint</option>
+								<option value="Sole" {{($client->application_categoryy == 'Sole')?'selected':''}}>Sole</option>
+								<option value="Either Or Survivor" {{($client->application_categoryy == 'Either Or Survivor')?'selected':''}}>Either Or Survivor</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<label for="date_of_enrollment">Date of Enrollment:</label>
+							<input type="date" value="{{$client->date_of_enrollment}}" name="date_of_enrollment" class="form-control" required >
+						</div>
+						<div class="col-md-4">
+							<label for="location">Location:</label>
+							<input type="text" name="location" class="form-control" required value="{{$client->location}}">
+						</div>
+					</div>	
+                </div>
+            </div>
+
         	<div class="card card-box">
                 <div class="card-head">
                     <header>First / Sole Application Details</header>

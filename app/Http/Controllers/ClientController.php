@@ -30,8 +30,22 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('client.create');
+    {   
+        $client = client::where('customer_no','0001')->get();
+        if ($client->count()>0) {
+            $latest = client::orderBy('created_at','desc')->take(1)->get();
+            $client_prev_application_no = $latest[0]->application_no;
+            $customer_no = $client_prev_customer_no + 1;
+            $client_prev_application_no = $latest[0]->application_no;
+            $application_no = $client_prev_application_no + 1;
+        }
+        else{
+            $customer_no = '0001';
+            $application_no = '0001';
+        }
+
+        return view('client.create')->with('customer_no',$customer_no)
+                                    ->with('application_no',$application_no);
     }
 
     /**
@@ -44,6 +58,12 @@ class ClientController extends Controller
     {   
         $client = new Client;
         $client->user_id = Auth::user()->id;
+
+        $client->customer_no = $request->customer_no;
+        $client->application_no = $request->application_no;
+        $client->application_categoryy = $request->application_categoryy;
+        $client->date_of_enrollment = $request->date_of_enrollment;
+        $client->location = $request->location;
 
         $client->application_category = $request->application_category;
         $client->salutation = $request->salutation;
@@ -160,6 +180,13 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
         $client = Client::find($id);
+
+        $client->customer_no = $request->customer_no;
+        $client->application_no = $request->application_no;
+        $client->application_categoryy = $request->application_categoryy;
+        $client->date_of_enrollment = $request->date_of_enrollment;
+        $client->location = $request->location;
+
         $client->application_category = $request->application_category;
         $client->salutation = $request->salutation;
         $client->DOB = $request->DOB;

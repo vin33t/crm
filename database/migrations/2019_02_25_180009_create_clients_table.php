@@ -17,6 +17,12 @@ class CreateClientsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
 
+            $table->string('customer_no')->nullable();
+            $table->string('application_no')->nullable();
+            $table->string('application_categoryy')->nullable();
+            $table->Date('date_of_enrollment')->nullable();
+            $table->string('location')->nullable();
+
             $table->string('application_category')->nullable();
             $table->string('salutation');
             $table->Date('DOB')->nullable();
