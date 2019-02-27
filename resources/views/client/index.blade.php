@@ -32,6 +32,9 @@ Clients
 	                                <th>Mobile</th>
 	                                <th>DOB</th>
 	                                <th>Occupation</th>
+	                                @if(Auth::user()->admin)
+	                                <th>Action</th>
+	                                @endif
 	                            </tr>
 	                        </thead>
 	                        <tbody  >

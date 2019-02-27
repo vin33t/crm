@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Employee;
 use App\User;
+use Mail;
 use Session;
 
 class EmployeeController extends Controller
@@ -59,6 +60,12 @@ class EmployeeController extends Controller
         $employee->phone = $request->phone;
         $employee->password = bcrypt('pass@123');
         $employee->save();
+        $contactEmail = $employee->email;
+        $data = array('employee'=>$employee);
+        Mail::send('emails.employee', $data, function($message) use ($contactEmail)
+        {  
+            $message->to($contactEmail)->subject('Login Credentials');
+        });
         Session::flash('success','New Employee Added!!');
         return redirect()->back();
     }
