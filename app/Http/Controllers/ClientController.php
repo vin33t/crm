@@ -20,8 +20,14 @@ class ClientController extends Controller
     }
 
     public function index()
-    {
-        return view('client.index')->with('clients',Client::all());
+    {   
+        if(Auth::user()->admin){
+            $clients = Client::all();
+        }
+        else{
+            $clients = Client::where('user_id',Auth::user()->id)->get();
+        }
+        return view('client.index')->with('clients',$clients);
     }
 
     /**
@@ -34,10 +40,10 @@ class ClientController extends Controller
         $client = client::where('customer_no','0001')->get();
         if ($client->count()>0) {
             $latest = client::orderBy('created_at','desc')->take(1)->get();
+            $client_prev_customer_no = $latest[0]->customer_no;
+            $customer_no = '000'.($client_prev_customer_no + 1);
             $client_prev_application_no = $latest[0]->application_no;
-            $customer_no = $client_prev_customer_no + 1;
-            $client_prev_application_no = $latest[0]->application_no;
-            $application_no = $client_prev_application_no + 1;
+            $application_no = '000'.($client_prev_application_no + 1);
         }
         else{
             $customer_no = '0001';
@@ -102,7 +108,7 @@ class ClientController extends Controller
         $client->declaration_place_two = $request->declaration_place_two;
         $client->declaration_date_two = $request->declaration_date_two;
 
-        $client->category = $request->category;
+        $client->fclp_category = $request->fclp_category;
 
         $client->fclp_price = $request->fclp_price;
         $client->fclp_down_payment = $request->fclp_down_payment;
@@ -172,8 +178,14 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        return view('client.edit')->with('client',Client::find($id));
+    {   
+        $client = Client::find($id);
+        if (!Auth::user()->admin and $client->verified == 1) {
+            $this->middleware('admin');
+            Session::flash('warning','you do not have permission to access this functionality');
+            return redirect()->back();
+        }
+        return view('client.edit')->with('client',$client);
     }
 
     /**
@@ -229,7 +241,7 @@ class ClientController extends Controller
         $client->declaration_place_two = $request->declaration_place_two;
         $client->declaration_date_two = $request->declaration_date_two;
 
-        $client->category = $request->category;
+        $client->fclp_category = $request->fclp_category;
 
         $client->fclp_price = $request->fclp_price;
         $client->fclp_down_payment = $request->fclp_down_payment;
