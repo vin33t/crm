@@ -36,14 +36,14 @@ Edit Client
                 </div>
                 <div class="card-body no-padding height-9">
                 	<div class="row">
-                		<div class="col-md-4">
+                		<div class="col-md-3">
 							<label for="application_category">Application category:</label>
 							<select name="application_category" id="" class="form-control" required>
 								<option value="individual" {{($client->application_category == 'individual')?'selected':''}}>Individual</option>
 								<option value="joint" {{($client->application_category == 'joint')?'selected':''}}>Joint</option>
 							</select>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<label for="salutation">Salutation:</label>
 							<select name="salutation" id="" class="form-control" required>
 								<option value="Mr." {{($client->salutation == 'Mr.')?'selected':''}}>Mr.</option>
@@ -51,9 +51,17 @@ Edit Client
 								<option value="Miss." {{($client->salutation == 'Miss.')?'selected':''}}>Miss.</option>
 							</select>
 						</div>
-						<div class="col-md-4">
+						<div class="col-md-3">
 							<label for="DOB">DOB:</label>
 							<input type="date" name="DOB" class="form-control" required value="{{$client->DOB}}">
+						</div>
+						<div class="col-md-3">
+							<label for="occupation">Occupation:</label>
+							<select name="occupation" id="" class="form-control" required>
+								<option value="Salaried" {{($client->occupation == 'Salaried')?'selected':''}}>Salaried</option>
+								<option value="Business" {{($client->occupation == 'Business')?'selected':''}}>Business</option>
+								<option value="Self-Employed" {{($client->occupation == 'Self-Employed')?'selected':''}}>Self-Employed</option>
+							</select>
 						</div>
 					</div>
 					<div class="row">
@@ -68,24 +76,6 @@ Edit Client
 						<div class="col-md-4">
 							<label for="last_name"> Last Name:</label>
 							<input type="text" name="last_name" class="form-control" required value="{{$client->last_name}}">
-						</div>
-					</div>
-					<div class="row">
-                		<div class="col-md-4">
-							<label for="occupation">Occupation:</label>
-							<select name="occupation" id="" class="form-control" required>
-								<option value="Salaried" {{($client->occupation == 'Salaried')?'selected':''}}>Salaried</option>
-								<option value="Business" {{($client->occupation == 'Business')?'selected':''}}>Business</option>
-								<option value="Self-Employed" {{($client->occupation == 'Self-Employed')?'selected':''}}>Self-Employed</option>
-							</select>
-						</div>
-						<div class="col-md-4">
-							<label for="name_authorized_signatory">Name Of Authorized Signatory:</label>
-							<input type="text" name="name_authorized_signatory" class="form-control" required value="{{$client->name_authorized_signatory}}">
-						</div>
-						<div class="col-md-4">
-							<label for="designation_authorized_signatory">Designation Of Authorized Signatory:</label>
-							<input type="text" name="designation_authorized_signatory" class="form-control" required value="{{$client->designation_authorized_signatory}}">
 						</div>
 					</div>
                 </div>
@@ -204,7 +194,7 @@ Edit Client
                 	<div class="row">
                 		<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I Hereby certify that the details furnished above are accurate and true to the best of my knowledge Place.</strong><br><br>
                 		<div class="col-md-6">
-							<input type="email" name="declaration_email_one" class="form-control" placeholder="Enter Email" required value="{{$client->declaration_email_one}}">
+							<input type=text" name="declaration_place_one" class="form-control" placeholder="Enter Place" required value="{{$client->declaration_place_one}}">
 						</div>
 						<div class="col-md-6">
 							<input type="date" name="declaration_date_one" class="form-control" required value="{{$client->declaration_date_one}}">
@@ -416,7 +406,7 @@ Edit Client
                 	<div class="row">
                 		<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I Hereby certify that the details furnished above are accurate and true to the best of my knowledge Place.</strong><br><br>
                 		<div class="col-md-6">
-							<input type="email" name="declaration_email_two" class="form-control" placeholder="Enter Email" required value="{{$client->declaration_email_two}}">
+							<input type="text" name="declaration_place_two" class="form-control" placeholder="Enter Place" required value="{{$client->declaration_place_two}}">
 						</div>
 						<div class="col-md-6">
 							<input type="date" name="declaration_date_two" class="form-control" required value="{{$client->declaration_date_two}}">

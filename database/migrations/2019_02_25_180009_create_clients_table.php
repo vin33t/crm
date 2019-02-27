@@ -24,8 +24,6 @@ class CreateClientsTable extends Migration
             $table->string('middle_name')->nullable();
             $table->string('last_name');
             $table->string('occupation')->nullable();
-            $table->string('name_authorized_signatory')->nullable();
-            $table->string('designation_authorized_signatory')->nullable();
 
             $table->string('co_salutation')->nullable();
             $table->string('co_first_name')->nullable();
@@ -44,10 +42,10 @@ class CreateClientsTable extends Migration
             $table->string('alternate_mobile')->nullable();
             $table->string('email')->nullable();
 
-            $table->string('declaration_email_one')->nullable();
+            $table->string('declaration_place_one')->nullable();
             $table->string('declaration_date_one')->nullable();
 
-            $table->string('declaration_email_two')->nullable();
+            $table->string('declaration_place_two')->nullable();
             $table->string('declaration_date_two')->nullable();
 
             $table->string('fclp_price')->nullable();
