@@ -155,7 +155,18 @@ class ClientController extends Controller
         $client->kyc_id_pan_no = $request->kyc_id_pan_no;
         $client->kyc_address_proof = $request->kyc_address_proof;
         $client->kyc_address_ref_no = $request->kyc_address_ref_no;
-
+        do {
+            //generate a random string using Laravel's str_random helper
+            $verify_token = str_random();
+        } //check if the token already exists and if it does, try again
+        while (Client::where('verify_token', $verify_token)->first());
+        do {
+            //generate a random string using Laravel's str_random helper
+            $not_verify_token = str_random();
+        } //check if the token already exists and if it does, try again
+        while (Client::where('not_verify_token', $not_verify_token)->first());
+        $client->verify_token = $verify_token;
+        $client->not_verify_token = $not_verify_token;
         $client->save();
 
         $contactEmail = $client->email;

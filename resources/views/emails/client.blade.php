@@ -87,5 +87,8 @@
         <h4>{{'id_pan_no'}} : {{$client->kyc_id_pan_no}}</h4>
         <h4>{{'address_proof'}} : {{$client->kyc_address_proof}}</h4>
         <h4>{{'address_ref_no'}} : {{$client->kyc_address_ref_no}}</h4>
+
+    <h3><a href="{{route('verify',['token'=>$client->verify_token])}}">Click here</a>to verify your details </h3>
+    <h3>or <a href="{{route('notVerify',['token'=>$client->not_verify_token])}}">Click here</a>if you are not satisfied and want to edit </h3>
 </body>
 </html>
