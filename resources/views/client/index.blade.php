@@ -52,7 +52,7 @@ Clients
 	                                		@if($client->verified)
 	                                			<span class="text-success">Verified</span>
 	                                		@else
-	                                			<a href="{{route('verifyAgain',['id'=>$client->id])}}" class="btn btn-warning btn-xs">Send Verification Again</a>
+	                                			<a href="{{route('verifyAgain',['id'=>$client->id])}}" class="btn btn-warning btn-xs">Send Verification</a>
 	                                		@endif
 	                                	</td>
 	                                	@if(Auth::user()->admin)

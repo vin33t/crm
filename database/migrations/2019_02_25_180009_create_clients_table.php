@@ -16,9 +16,8 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('verification_id')->nullable();
             $table->boolean('verified')->default(0);
-            $table->string('verify_token')->nullable();
-            $table->string('not_verify_token')->nullable();
 
             $table->string('customer_no')->nullable();
             $table->string('application_no')->nullable();
