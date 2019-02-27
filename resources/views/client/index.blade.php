@@ -32,6 +32,7 @@ Clients
 	                                <th>Mobile</th>
 	                                <th>DOB</th>
 	                                <th>Occupation</th>
+	                                <th>Status</th>
 	                                @if(Auth::user()->admin)
 	                                <th>Action</th>
 	                                @endif
@@ -47,6 +48,13 @@ Clients
 	                                	<td>{{$client->mobile}}</td>
 	                                	<td>{{$client->DOB}}</td>
 	                                	<td>{{$client->occupation}}</td>
+	                                	<td>
+	                                		@if($client->verified)
+	                                			<span class="text-success">Verified</span>
+	                                		@else
+	                                			<a href="{{route('verifyAgain',['id'=>$client->id])}}" class="btn btn-warning btn-xs">Send Verification Again</a>
+	                                		@endif
+	                                	</td>
 	                                	@if(Auth::user()->admin)
 	                                	<td>
 	                                		<a href="{{route('client.edit',['id'=>$client->id])}}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>

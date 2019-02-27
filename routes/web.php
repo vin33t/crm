@@ -67,3 +67,7 @@ Route::get('/client/Unverification/{token}',[
 			'uses'=> 'VerificationController@notVerifydetails',
 			'as'=>'notVerify'
 		]);
+Route::get('/client/verifyAgain/{id}',[
+			'uses'=> 'VerificationController@VerifyAgain',
+			'as'=>'verifyAgain'
+		]);

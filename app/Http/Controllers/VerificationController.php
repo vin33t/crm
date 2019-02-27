@@ -46,4 +46,15 @@ class VerificationController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function verifyAgain($id){
+        $client = Client::find($id);
+        $contactEmail = $client->email;
+        $data = array('client'=>$client);
+        Mail::send('emails.client', $data, function($message) use ($contactEmail)
+        {  
+            $message->to($contactEmail)->subject('Verify your Details');
+        });
+        return redirect()->back();
+    }
 }
