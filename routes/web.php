@@ -54,3 +54,7 @@ Route::post('/client/update/{id}',[
 			'uses'=> 'ClientController@update',
 			'as'=>'client.update'
 		]);
+Route::get('/client/destroy/{id}',[
+			'uses'=> 'ClientController@destroy',
+			'as'=>'client.destroy'
+		]);

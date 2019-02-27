@@ -47,6 +47,7 @@ Clients
 	                                	@if(Auth::user()->admin)
 	                                	<td>
 	                                		<a href="{{route('client.edit',['id'=>$client->id])}}" class="btn btn-xs btn-info"><i class="fa fa-edit"></i></a>
+	                                		<a href="{{route('client.destroy',['id'=>$client->id])}}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
 	                                	</td>
 	                                	@elseif (!Auth::user()->admin and $client->verified == 0)
 										<td>

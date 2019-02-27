@@ -300,7 +300,11 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        $this->middleware('admin');
+        $client = Client::find($id);
+        $client->delete();
+        Session::flash('info','client deleted');
+        return redirect()->back();
     }
 }
