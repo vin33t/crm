@@ -42,7 +42,7 @@ Edit Client
 						</div>
 						<div class="col-md-6">
 							<label for="application_no">Application No:</label>
-							<input name="application_no" id="" readonly required value="{{$client->apllication_no}}"><br><br>
+							<input name="application_no" id="" readonly required value="{{$client->application_no}}"><br><br>
 						</div>
 					</div>
 					<div class="row">

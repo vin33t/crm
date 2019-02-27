@@ -5,8 +5,8 @@
 	
 </head>
 <body>
-	<h3>Hello!! {{$employee->name}}, your login credentials are given below: </h3>
-	<h2>Email:</h2>{{$employee->email}}
-	<h2>Password</h2>{{'pass@123'}}
+	<h2>Hello!! {{$employee->name}}, your login credentials are given below: </h2>
+	<h4>Email:</h4>{{$employee->email}}
+	<h4>Password</h4>{{'pass@123'}}
 </body>
 </html>

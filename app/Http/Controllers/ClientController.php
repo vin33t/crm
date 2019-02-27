@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Client;
 use Session;
 use Auth;
+use Mail;
 
 class ClientController extends Controller
 {
@@ -156,6 +157,15 @@ class ClientController extends Controller
         $client->kyc_address_ref_no = $request->kyc_address_ref_no;
 
         $client->save();
+
+        $contactEmail = $client->email;
+        $data = array('client'=>$client);
+        Mail::send('emails.client', $data, function($message) use ($contactEmail)
+        {  
+            $message->to($contactEmail)->subject('Verify your Details');
+        });
+
+        
         Session::flash('success',' New Client Created!!');
         return redirect()->route('clients');
     }
@@ -289,6 +299,8 @@ class ClientController extends Controller
         $client->kyc_address_ref_no = $request->kyc_address_ref_no;
 
         $client->save();
+
+        
         Session::flash('success',' Client Updated!!');
         return redirect()->back();
     }
