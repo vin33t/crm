@@ -92,7 +92,7 @@ Create Client
                 </div>
                 <div class="card-body no-padding height-9">
                 	<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<label for="co_salutation">Salutation:</label>
 							<select name="co_salutation" id="" class="form-control" required>
 								<option value="Mr.">Mr.</option>
@@ -100,12 +100,20 @@ Create Client
 								<option value="Miss.">Miss.</option>
 							</select>
 						</div>
-						<div class="col-md-6">
-							<label for="co_first_name">First Name:</label>
-							<input type="text" name="co_first_name" class="form-control" required>
+						<div class="col-md-4">
+							<label for="co_DOB"> DOB:</label>
+							<input type="date" name="co_DOB" class="form-control" required>
+						</div>
+						<div class="col-md-4">
+							<label for="relationship_with_applicant"> Relationship with Applicant:</label>
+							<input type="text" name="relationship_with_applicant" class="form-control" required>
 						</div>
 					</div>
 					<div class="row">
+						<div class="col-md-4">
+							<label for="co_first_name">First Name:</label>
+							<input type="text" name="co_first_name" class="form-control" required>
+						</div>
 						<div class="col-md-4">
 							<label for="co_middle_name">Middle Name:</label>
 							<input type="text" name="co_middle_name" class="form-control" required>
@@ -113,10 +121,6 @@ Create Client
 						<div class="col-md-4">
 							<label for="co_last_name"> Last Name:</label>
 							<input type="text" name="co_last_name" class="form-control" required>
-						</div>
-						<div class="col-md-4">
-							<label for="relationship_with_applicant"> Relationship with Applicant:</label>
-							<input type="text" name="relationship_with_applicant" class="form-control" required>
 						</div>
 					</div>
                 </div>
@@ -176,6 +180,25 @@ Create Client
 						<div class="col-md-4">
 							<label for="email"> Email:</label>
 							<input type="email" name="email" class="form-control" required>
+						</div>
+					</div>
+                </div>
+            </div>
+
+            <div class="card card-box">
+                <div class="card-head">
+                    <header>Program & Campaign Details</header>
+                    <div class="tools">
+                        <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
+                        <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
+                        <a class="t-close btn-color fa fa-times" href="javascript:;"></a>
+                    </div>
+                </div>
+                <div class="card-body no-padding height-9">
+                	<div class="row">
+                		<div class="col-md-6">
+                			<label for="campaign_id">Campaign Id:</label>
+							<input type=text" name="campaign_id" class="form-control"  required>
 						</div>
 					</div>
                 </div>
@@ -291,6 +314,8 @@ Create Client
                 <div class="card-head">
                     <header>EMI Plan</header>
                     <div class="tools">
+                    	<label for="emi_amount"><strong>EMI Amount(Rs.):</strong></label>
+						<input type="text" name="emi_amount" required>
                         <a class="fa fa-repeat btn-color box-refresh" href="javascript:;"></a>
                         <a class="t-collapse btn-color fa fa-chevron-down" href="javascript:;"></a>
                         <a class="t-close btn-color fa fa-times" href="javascript:;"></a>

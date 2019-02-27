@@ -25,6 +25,7 @@ class CreateClientsTable extends Migration
             $table->string('last_name');
             $table->string('occupation')->nullable();
 
+            $table->string('co_DOB')->nullable();
             $table->string('co_salutation')->nullable();
             $table->string('co_first_name')->nullable();
             $table->string('co_middle_name')->nullable();
@@ -41,6 +42,8 @@ class CreateClientsTable extends Migration
             $table->string('mobile')->nullable();
             $table->string('alternate_mobile')->nullable();
             $table->string('email')->nullable();
+
+            $table->string('campaign_id')->nullable();
 
             $table->string('declaration_place_one')->nullable();
             $table->string('declaration_date_one')->nullable();
@@ -62,6 +65,7 @@ class CreateClientsTable extends Migration
             $table->string('fclp_account_holder_name')->nullable();
             $table->string('fclp_account_holder_number')->nullable();
 
+            $table->string('emi_amount')->nullable();
             $table->string('emi_regular_plan')->nullable();
             $table->string('emi_mode_of_payment')->nullable();
 

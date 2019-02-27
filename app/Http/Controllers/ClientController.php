@@ -55,6 +55,7 @@ class ClientController extends Controller
 
 
         $client->co_salutation = $request->co_salutation;
+        $client->co_DOB = $request->co_DOB;
         $client->co_first_name = $request->co_first_name;
         $client->co_middle_name = $request->co_middle_name;
         $client->co_last_name = $request->co_last_name;
@@ -72,6 +73,7 @@ class ClientController extends Controller
         $client->alternate_mobile = $request->alternate_mobile;
         $client->email = $request->email;
 
+        $client->campaign_id = $request->campaign_id;
 
         $client->declaration_place_one = $request->declaration_place_one;
         $client->declaration_date_one = $request->declaration_date_one;
@@ -95,7 +97,7 @@ class ClientController extends Controller
         $client->fclp_account_holder_name = $request->fclp_account_holder_name;
         $client->fclp_account_holder_number = $request->fclp_account_holder_number;
 
-
+        $client->emi_amount = $request->emi_amount;
         $client->emi_regular_plan = $request->emi_regular_plan;
         $client->emi_mode_of_payment = $request->emi_mode_of_payment;
 
@@ -165,10 +167,8 @@ class ClientController extends Controller
         $client->middle_name = $request->middle_name;
         $client->last_name = $request->last_name;
         $client->occupation = $request->occupation;
-        $client->name_authorized_signatory = $request->name_authorized_signatory;
-        $client->designation_authorized_signatory = $request->designation_authorized_signatory;
 
-
+        $client->co_DOB = $request->co_DOB;
         $client->co_salutation = $request->co_salutation;
         $client->co_first_name = $request->co_first_name;
         $client->co_middle_name = $request->co_middle_name;
@@ -187,12 +187,13 @@ class ClientController extends Controller
         $client->alternate_mobile = $request->alternate_mobile;
         $client->email = $request->email;
 
+        $client->campaign_id = $request->campaign_id;
 
-        $client->declaration_email_one = $request->declaration_email_one;
+        $client->declaration_place_one = $request->declaration_place_one;
         $client->declaration_date_one = $request->declaration_date_one;
 
 
-        $client->declaration_email_two = $request->declaration_email_two;
+        $client->declaration_place_two = $request->declaration_place_two;
         $client->declaration_date_two = $request->declaration_date_two;
 
 
@@ -210,7 +211,7 @@ class ClientController extends Controller
         $client->fclp_account_holder_name = $request->fclp_account_holder_name;
         $client->fclp_account_holder_number = $request->fclp_account_holder_number;
 
-
+        $client->emi_amount = $request->emi_amount;
         $client->emi_regular_plan = $request->emi_regular_plan;
         $client->emi_mode_of_payment = $request->emi_mode_of_payment;
 
