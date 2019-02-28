@@ -10,6 +10,6 @@ class verification extends Model
 
     public function client()
     {
-        return $this->belongsTo('App\client');
+        return $this->belongsTo('App\Client');
     }
 }
