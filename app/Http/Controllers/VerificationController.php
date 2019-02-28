@@ -57,6 +57,6 @@ class VerificationController extends Controller
             $message->to($contactEmail)->subject('Verify your Details');
         });
         Session::flash('info','Verification Sent!!')
-        return redirect()->back();
+        return redirect()->route('home');
     }
 }
