@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Client;
 use Mail;
 use App\verification;
+use Session;
 
 class VerificationController extends Controller
 {
